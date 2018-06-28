@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import classnames from "classnames";
@@ -14,6 +13,12 @@ class Register extends Component {
     password2: "",
     errors: {}
   };
+
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
@@ -138,4 +143,4 @@ const mapDispatchToProps = state => ({
 export default connect(
   mapDispatchToProps,
   { registerUser }
-)(withRouter(Register));
+)(Register);
