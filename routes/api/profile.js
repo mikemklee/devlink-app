@@ -219,7 +219,7 @@ router.post(
         };
 
         // Add to education array
-        profile.education.unshift(newExp);
+        profile.education.unshift(newEdu);
         profile.save().then(profile => res.json(profile));
       })
       .catch(error => res.status(404).json(error));
