@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  color: #333;
+  background: transparent;
+  font-family: $font-main;
+  font-weight: 300;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* > li {
+  list-style: none;
+}
+
+* > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#root {
+  min-width: 100%;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+section,
+footer {
+  width: 100%;
+}
