@@ -35,6 +35,7 @@ body {
   min-width: 100%;
 }
 .App {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
