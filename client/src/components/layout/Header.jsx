@@ -37,7 +37,7 @@ class Header extends Component {
 
     const guestLinks = (
       <Fragment>
-        <Link className="header__link" to="/register">
+        <Link className="header__link header__link--signup" to="/register">
           Sign Up
         </Link>
         <Link className="header__link" to="/login">

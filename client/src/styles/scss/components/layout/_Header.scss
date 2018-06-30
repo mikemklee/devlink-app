@@ -29,6 +29,15 @@
     &:hover {
       background-color: whitesmoke;
     }
+
+    &--signup {
+      background-color: rgba($gold, 0.5);
+      font-weight: 600;
+
+      &:hover {
+        background-color: rgba($gold, 0.7);
+      }
+    }
   }
 
   &__user {

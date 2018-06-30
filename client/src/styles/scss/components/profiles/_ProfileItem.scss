@@ -1,0 +1,64 @@
+.profiles__item {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr min-content;
+  padding: 1rem 2rem;
+  border-bottom: 1.5px solid $off-white;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: rgba($off-white, 0.3);
+  }
+
+  &__avatar {
+    grid-row: 1/-1;
+    grid-column: 1/2;
+    padding-top: 1rem;
+    img {
+      width: 6rem;
+      border-radius: 50%;
+    }
+  }
+  &__user {
+    grid-row: 1/2;
+    grid-column: 2/3;
+
+    &--link {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+    &--occupation {
+      font-size: 1.7rem;
+      font-style: italic;
+    }
+    &--location {
+      font-size: 1.7rem;
+      font-style: italic;
+      color: grey;
+    }
+  }
+
+  &__skills {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+
+    &--label {
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+
+    &--item {
+      font-size: 1.5rem;
+      font-weight: 700;
+      height: 2.5rem;
+      background-color: rgba($gold, 0.5);
+      margin: 0 1rem;
+      padding: 0.2rem 1rem;
+      transform: skew(-10deg);
+    }
+  }
+}

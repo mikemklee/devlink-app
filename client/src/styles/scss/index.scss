@@ -2,9 +2,11 @@
 @import "./settings";
 @import "./base";
 @import "./mixins";
+@import "./components/common/TextField";
 @import "./components/layout/Header";
 @import "./components/layout/Landing";
 @import "./components/layout/Footer";
 @import "./components/auth/Login";
 @import "./components/auth/Register";
-@import "./components/common/TextField";
+@import "./components/profiles/Profiles";
+@import "./components/profiles/ProfileItem";
