@@ -12,31 +12,28 @@ class Experience extends Component {
 
   render() {
     const experience = this.props.experience.map(exp => (
-      <tr key={exp._id}>
+      <tr key={exp._id} className="experience__table__item">
         <td>{exp.company}</td>
         <td>{exp.title}</td>
         <td>
-          <Moment format="YYYY/MM/DD">{exp.from}</Moment> -
+          <Moment format="YYYY/MM/DD">{exp.from}</Moment> -{" "}
           {exp.to === null ? (
             "Now"
           ) : (
             <Moment format="YYYY/MM/DD">{exp.to}</Moment>
           )}
         </td>
-        <td>
-          <button
-            onClick={this.onDeleteClick(exp._id)}
-            className="btn btn-danger"
-          >
-            Delete
+        <td className="experience__table__item--delete">
+          <button onClick={this.onDeleteClick(exp._id)}>
+            <span>&times;</span>
           </button>
         </td>
       </tr>
     ));
     return (
-      <div>
-        <h4 className="mb-4">Experience</h4>
-        <table className="table">
+      <div className="experience">
+        <h4 className="experience__title">Experience</h4>
+        <table className="experience__table">
           <thead>
             <tr>
               <th>Company</th>

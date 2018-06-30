@@ -4,7 +4,8 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+  letter-spacing: -1px; }
 
 html {
   box-sizing: border-box;
@@ -40,7 +41,6 @@ body {
   flex-direction: column; }
 
 header,
-section,
 footer {
   width: 100%; }
 
@@ -102,7 +102,9 @@ footer {
         background-color: rgba(255, 179, 0, 0.7); }
   .header__user {
     margin-left: 2rem;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center; }
     .header__user img {
       margin-right: 0.5rem;
       width: 3rem;
@@ -293,3 +295,123 @@ footer {
       margin: 0 1rem;
       padding: 0.2rem 1rem;
       transform: skew(-10deg); }
+
+.dashboard {
+  flex: 1;
+  margin-top: 2rem;
+  padding: 2rem;
+  align-self: center;
+  min-width: 80rem;
+  display: flex;
+  flex-direction: column; }
+  .dashboard__title {
+    font-size: 4.5rem;
+    line-height: 1; }
+  .dashboard__greeting {
+    font-size: 3rem; }
+  .dashboard__calltoaction {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    margin: 2rem 0; }
+  .dashboard__button {
+    display: inline-block;
+    border: 3px solid #2c3e50;
+    outline: none;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    height: 4rem;
+    width: 8rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #2c3e50;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.2s; }
+    .dashboard__button:hover {
+      background-color: #2c3e50;
+      color: white; }
+    .dashboard__button--delete {
+      align-self: flex-end;
+      width: 15rem;
+      font-size: 1.5rem;
+      color: #d50000;
+      border-color: #d50000; }
+      .dashboard__button--delete:hover {
+        background-color: #d50000;
+        color: white; }
+
+.dashboard__actions {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0; }
+  .dashboard__actions__item {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: flex-start;
+    margin-right: 3rem; }
+    .dashboard__actions__item svg {
+      margin-right: 1rem;
+      width: 2rem;
+      height: 2rem; }
+
+.experience__title {
+  font-size: 2.5rem; }
+
+.experience__table {
+  width: 100%;
+  margin-bottom: 3rem; }
+  .experience__table thead {
+    text-align: left;
+    font-size: 1.8rem; }
+  .experience__table tbody {
+    font-size: 1.7rem; }
+
+.experience__table__item--delete {
+  display: flex;
+  justify-content: flex-end; }
+  .experience__table__item--delete button {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: rgba(213, 0, 0, 0.4);
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s; }
+    .experience__table__item--delete button:hover {
+      color: #d50000; }
+
+.education__title {
+  font-size: 2.5rem; }
+
+.education__table {
+  width: 100%;
+  margin-bottom: 3rem; }
+  .education__table thead {
+    text-align: left;
+    font-size: 1.8rem; }
+  .education__table tbody {
+    font-size: 1.7rem; }
+
+.education__table__item--delete {
+  display: flex;
+  justify-content: flex-end; }
+  .education__table__item--delete button {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: rgba(213, 0, 0, 0.4);
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s; }
+    .education__table__item--delete button:hover {
+      color: #d50000; }

@@ -1,0 +1,38 @@
+.dashboard {
+  flex: 1;
+  margin-top: 2rem;
+  padding: 2rem;
+  align-self: center;
+  min-width: 80rem;
+  display: flex;
+  flex-direction: column;
+  &__title {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+  &__greeting {
+    font-size: 3rem;
+  }
+  &__calltoaction {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    margin: 2rem 0;
+  }
+
+  &__button {
+    @include squareButton;
+
+    &--delete {
+      align-self: flex-end;
+      width: 15rem;
+      font-size: 1.5rem;
+      color: $red;
+      border-color: $red;
+
+      &:hover {
+        background-color: $red;
+        color: white;
+      }
+    }
+  }
+}

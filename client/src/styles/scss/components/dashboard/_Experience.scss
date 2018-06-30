@@ -1,0 +1,42 @@
+.experience {
+  &__title {
+    font-size: 2.5rem;
+  }
+}
+
+.experience__table {
+  width: 100%;
+  margin-bottom: 3rem;
+
+  thead {
+    text-align: left;
+    font-size: 1.8rem;
+  }
+
+  tbody {
+    font-size: 1.7rem;
+  }
+}
+
+.experience__table__item {
+  &--delete {
+    display: flex;
+    justify-content: flex-end;
+    button {
+      border: none;
+      outline: none;
+      background: transparent;
+      color: rgba($red, 0.4);
+      width: 3rem;
+      height: 3rem;
+      font-size: 3rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+}

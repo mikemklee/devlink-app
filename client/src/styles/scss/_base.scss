@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  letter-spacing: -1px;
 }
 
 html {
@@ -46,7 +47,6 @@ body {
 }
 
 header,
-section,
 footer {
   width: 100%;
 }

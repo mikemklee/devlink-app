@@ -12,31 +12,26 @@ class Education extends Component {
 
   render() {
     const education = this.props.education.map(edu => (
-      <tr key={edu._id}>
+      <tr key={edu._id} className="education__table__item">
         <td>{edu.school}</td>
         <td>{edu.degree}</td>
         <td>
-          <Moment format="YYYY/MM/DD">{edu.from}</Moment> -
+          <Moment format="YYYY/MM/DD">{edu.from}</Moment> -{" "}
           {edu.to === null ? (
             "Now"
           ) : (
             <Moment format="YYYY/MM/DD">{edu.to}</Moment>
           )}
         </td>
-        <td>
-          <button
-            onClick={this.onDeleteClick(edu._id)}
-            className="btn btn-danger"
-          >
-            Delete
-          </button>
+        <td className="education__table__item--delete">
+          <button onClick={this.onDeleteClick(edu._id)}>&times;</button>
         </td>
       </tr>
     ));
     return (
-      <div>
-        <h4 className="mb-4">Education</h4>
-        <table className="table">
+      <div className="education">
+        <h4 className="education__title">Education</h4>
+        <table className="education__table">
           <thead>
             <tr>
               <th>School</th>

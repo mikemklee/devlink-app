@@ -19,3 +19,28 @@
     background-color: $dark-navy;
   }
 }
+
+@mixin squareButton {
+  display: inline-block;
+  border: 3px solid $dark-navy;
+  outline: none;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  height: 4rem;
+  width: 8rem;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1;
+  color: $dark-navy;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $dark-navy;
+    color: white;
+  }
+}

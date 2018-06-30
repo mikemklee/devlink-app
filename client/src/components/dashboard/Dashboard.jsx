@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -31,46 +31,42 @@ class Dashboard extends Component {
       // Check if logged in user has profile data
       if (Object.keys(profile).length > 0) {
         dashboardContent = (
-          <div>
-            <p className="lead text-muted">
+          <Fragment>
+            <p className="dashboard__greeting">
               Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
             </p>
             <ProfileActions />
             <Experience experience={profile.experience} />
             <Education education={profile.education} />
-            <div style={{ marginBottom: "60px" }} />
-            <button onClick={this.onDeleteClick} className="btn btn-danger">
+            <button
+              onClick={this.onDeleteClick}
+              className="dashboard__button dashboard__button--delete"
+            >
               Delete Account
             </button>
-          </div>
+          </Fragment>
         );
       } else {
         // User logged in but has no profile
         dashboardContent = (
-          <div>
-            <p className="lead text-muted">Welcome {user.name}</p>
-            <p>
+          <Fragment>
+            <p className="dashboard__greeting">Welcome {user.name}</p>
+            <p className="dashboard__calltoaction">
               You have not set up your profile yet. <br />
               Please take a moment and complete your profile!
             </p>
-            <Link to="/create-profile" className="btn btn-lg btn-info">
-              Finish Profile
+            <Link to="/create-profile" className="dashboard__button">
+              Go!
             </Link>
-          </div>
+          </Fragment>
         );
       }
     }
 
     return (
       <div className="dashboard">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h1 className="display-4">Dashboard</h1>
-              {dashboardContent}
-            </div>
-          </div>
-        </div>
+        <h1 className="dashboard__title">Dashboard</h1>
+        {dashboardContent}
       </div>
     );
   }
