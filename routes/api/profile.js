@@ -109,7 +109,6 @@ router.post(
       // Return any errors with 400 status
       return res.status(400).json(errors);
     }
-
     // Get fields
     const profileFields = {};
     profileFields.user = req.user.id;
@@ -139,7 +138,9 @@ router.post(
           { user: req.user.id },
           { $set: profileFields },
           { new: true }
-        ).then(profile => res.json(profile));
+        ).then(profile => {
+          res.json(profile);
+        });
       } else {
         // Create
         // Check if handle exists
