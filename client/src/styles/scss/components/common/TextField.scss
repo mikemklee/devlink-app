@@ -1,0 +1,37 @@
+.form__field {
+  margin-top: 1rem;
+  align-self: stretch;
+  &__input {
+    outline: none;
+    width: 100%;
+    height: 4rem;
+    border: 1.5px solid $off-white;
+    border-radius: 3px;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s;
+    &--invalid {
+      border-color: red;
+      &::placeholder {
+        color: red;
+      }
+    }
+    &:focus {
+      border-color: darken($off-white, 10%);
+      &::placeholder {
+        color: currentColor;
+      }
+    }
+  }
+
+  &__info,
+  &__error {
+    line-height: 1;
+    padding: 0.2rem 1rem;
+    font-size: 1.3rem;
+  }
+
+  &__error {
+    color: red;
+  }
+}

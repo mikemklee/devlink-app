@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Overpass+Mono:300,400,600,700");
 @import "./settings";
 @import "./base";
+@import "./mixins";
 @import "./components/layout/Header";
 @import "./components/layout/Landing";
 @import "./components/layout/Footer";
+@import "./components/auth/Login";
+@import "./components/auth/Register";
+@import "./components/common/TextField";

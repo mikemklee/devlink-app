@@ -13,11 +13,11 @@ const TextFieldGroup = ({
   disabled
 }) => {
   return (
-    <div className="form-group">
+    <div className="form__field">
       <input
         type={type}
-        className={classnames("form-control form-control-lg", {
-          "is-invalid": error
+        className={classnames("form__field__input", {
+          "form__field__input--invalid": error
         })}
         placeholder={placeholder}
         name={name}
@@ -25,8 +25,8 @@ const TextFieldGroup = ({
         onChange={onChange}
         disabled={disabled}
       />
-      {info && <small className="form-text text-muted">{info}</small>}
-      {error && <div className="invalid-feedback">{error}</div>}
+      {info && <div className="form__field__info">{info}</div>}
+      {error && <div className="form__field__error">{error}</div>}
     </div>
   );
 };

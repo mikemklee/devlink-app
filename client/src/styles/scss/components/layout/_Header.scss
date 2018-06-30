@@ -19,7 +19,16 @@
   &__link {
     font-size: 1.8rem;
     text-decoration: none;
-    margin: 0 1rem;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    letter-spacing: -1px;
+    background-color: transparent;
+    border-radius: 4px;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: whitesmoke;
+    }
   }
 
   &__user {

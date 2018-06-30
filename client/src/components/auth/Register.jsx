@@ -50,49 +50,43 @@ class Register extends Component {
 
     return (
       <div className="register">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Sign Up</h1>
-              <p className="lead text-center">Create your Devlink account</p>
-              <form noValidate onSubmit={this.onSubmit}>
-                <TextFieldGroup
-                  placeholder="Name"
-                  name="name"
-                  value={this.state.name}
-                  onChange={this.onChange}
-                  error={errors.name}
-                />
-                <TextFieldGroup
-                  placeholder="Email Address"
-                  name="email"
-                  type="email"
-                  value={this.state.email}
-                  onChange={this.onChange}
-                  error={errors.email}
-                />
-                <TextFieldGroup
-                  placeholder="Password"
-                  name="password"
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.onChange}
-                  error={errors.password}
-                  info="Passwords must be between 6 and 30 characters long"
-                />
-                <TextFieldGroup
-                  placeholder="Confirm Password"
-                  name="password2"
-                  type="password"
-                  value={this.state.password2}
-                  onChange={this.onChange}
-                  error={errors.password2}
-                />
-                <input type="submit" className="btn btn-info btn-block mt-4" />
-              </form>
-            </div>
-          </div>
-        </div>
+        <h1 className="register__title">Sign Up</h1>
+        <p className="register__subtitle">Create your Devlink account</p>
+        <form className="register__form" noValidate onSubmit={this.onSubmit}>
+          <TextFieldGroup
+            placeholder="Name"
+            name="name"
+            value={this.state.name}
+            onChange={this.onChange}
+            error={errors.name}
+          />
+          <TextFieldGroup
+            placeholder="Email Address"
+            name="email"
+            type="email"
+            value={this.state.email}
+            onChange={this.onChange}
+            error={errors.email}
+          />
+          <TextFieldGroup
+            placeholder="Password"
+            name="password"
+            type="password"
+            value={this.state.password}
+            onChange={this.onChange}
+            error={errors.password}
+            info="Passwords must be between 6 and 30 characters long."
+          />
+          <TextFieldGroup
+            placeholder="Confirm Password"
+            name="password2"
+            type="password"
+            value={this.state.password2}
+            onChange={this.onChange}
+            error={errors.password2}
+          />
+          <input type="submit" className="register__submit" />
+        </form>
       </div>
     );
   }

@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  color: #333;
+  color: #444;
   background: transparent;
   font-family: $font-main;
   font-weight: 300;
@@ -29,6 +29,11 @@ body {
 * > a {
   text-decoration: none;
   color: inherit;
+}
+
+* > button,
+* > input {
+  font-family: $font-main;
 }
 
 #root {

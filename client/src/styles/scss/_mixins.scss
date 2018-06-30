@@ -1,0 +1,21 @@
+@mixin button {
+  display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 3px;
+  margin: 0 0.5rem;
+  height: 3.5rem;
+  width: 8rem;
+  font-size: 1.4rem;
+  color: white;
+  background-color: lighten($dark-navy, 10%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $dark-navy;
+  }
+}
