@@ -9,9 +9,11 @@ import Spinner from "../common/Spinner";
 import ProfileActions from "./ProfileActions";
 import Experience from "./Experience";
 import Education from "./Education";
+import checkTokenExpiry from "../../utils/checkTokenExpiry";
 
 class Dashboard extends Component {
   componentDidMount() {
+    checkTokenExpiry();
     this.props.getCurrentProfile();
   }
 

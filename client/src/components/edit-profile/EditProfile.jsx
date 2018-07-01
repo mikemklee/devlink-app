@@ -97,6 +97,7 @@ class CreateProfile extends Component {
       twitter: this.state.twitter,
       linkedin: this.state.linkedin
     };
+    console.log(profileData);
     this.props.createProfile(profileData, this.props.history);
   };
 

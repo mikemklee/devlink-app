@@ -1,0 +1,63 @@
+.profile__about {
+  background-color: darken(white, 2%);
+  border-radius: 5px;
+  padding: 2rem;
+
+  &--title {
+    font-size: 2rem;
+  }
+
+  &--bio {
+    position: relative;
+    font-size: 1.6rem;
+    padding-bottom: 2rem;
+
+    &::before {
+      content: "\201C";
+      position: absolute;
+      top: -6rem;
+      right: -1rem;
+      line-height: 1;
+      font-size: 20rem;
+      color: rgba(grey, 0.2);
+      font-family: sans-serif;
+      z-index: 1;
+    }
+  }
+}
+
+.profile__skills {
+  padding-top: 2rem;
+  border-top: 2px solid $off-white;
+  background-color: darken(white, 2%);
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1rem;
+  max-width: 80rem;
+
+  &--label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-style: italic;
+    display: flex;
+    align-items: flex-start;
+
+    svg {
+      margin-left: 1rem;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &--item {
+    font-size: 1.5rem;
+    font-weight: 700;
+    height: 2.5rem;
+    background-color: rgba($gold, 0.5);
+    margin: 0.5rem 1rem;
+    padding: 0.2rem 1rem;
+    transform: skew(-10deg);
+  }
+}

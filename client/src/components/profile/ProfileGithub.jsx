@@ -33,7 +33,6 @@ class ProfileGithub extends Component {
     if (repos.message === "Not Found") {
       repoItems = <h5>No repositories to display</h5>;
     } else {
-      console.log(repos);
       repoItems = repos.map(repo => (
         <div key={repo.id} className="card card-body mb-2">
           <div className="row">

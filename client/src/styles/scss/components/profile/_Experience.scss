@@ -1,0 +1,42 @@
+.experience__item {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  grid-template-rows: 1fr min-content;
+  padding: 2rem;
+  border-top: 1.5px solid $off-white;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: rgba($off-white, 0.4);
+  }
+
+  &__icon {
+    grid-row: 1/-1;
+    grid-column: 1/2;
+    img {
+      width: 7rem;
+    }
+  }
+  &__detail {
+    grid-row: 1/-1;
+    grid-column: 2/3;
+
+    &--position {
+      font-size: 2rem;
+      line-height: 1;
+    }
+    &--company {
+      font-size: 1.8rem;
+    }
+    &--duration,
+    &--location {
+      font-size: 1.6rem;
+      color: #444;
+    }
+
+    &--description {
+      padding-top: 1rem;
+      font-size: 1.6rem;
+    }
+  }
+}

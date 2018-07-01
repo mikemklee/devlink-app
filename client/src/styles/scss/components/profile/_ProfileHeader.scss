@@ -1,0 +1,55 @@
+.profile__header {
+  display: flex;
+  padding: 2rem;
+  margin: 2rem 0;
+  background-color: darken(white, 2%);
+  border-radius: 5px;
+}
+
+.profile__avatar {
+  margin-right: 2rem;
+  img {
+    width: 15rem;
+    border-radius: 50%;
+  }
+}
+
+.profile__user {
+  flex: 1;
+  padding: 2rem;
+
+  &--name {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  &--occupation {
+    font-size: 2.2rem;
+  }
+  &--location {
+    font-size: 2rem;
+    color: grey;
+  }
+}
+
+.profile__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    height: 3rem;
+    line-height: 1;
+    font-size: 1.7rem;
+    margin: 0.2rem 0;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 1rem;
+    }
+  }
+}

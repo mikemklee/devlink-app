@@ -1,6 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
+
 import isEmpty from "../../validation/isEmpty";
+
+import Icon from "../common/Icon";
 
 class ProfileAbout extends Component {
   static propTypes = {
@@ -13,35 +16,33 @@ class ProfileAbout extends Component {
     // Get first name
     const firstName = profile.user.name.trim().split(" ")[0];
 
-    // Skill List
-    const skills = profile.skills.map((skill, index) => (
-      <div key={index} className="p-3">
-        <i className="fa fa-check" /> {skill}
-      </div>
-    ));
-
     return (
-      <div className="row">
-        <div className="col-md-12">
-          <div className="card card-body bg-light mb-3">
-            <h3 className="text-center text-info">{firstName}'s Bio</h3>
-            <p className="lead">
-              {isEmpty(profile.bio) ? (
-                <span>{firstName} does not have a bio</span>
-              ) : (
-                <span>{profile.bio}</span>
-              )}
-            </p>
-            <hr />
-            <h3 className="text-center text-info">Skill Set</h3>
-            <div className="row">
-              <div className="d-flex flex-wrap justify-content-center align-items-center">
-                {skills}
-              </div>
+      <Fragment>
+        <div className="profile__about">
+          <h3 className="profile__about--title">Hi there, I am {firstName}.</h3>
+          <p className="profile__about--bio">
+            {isEmpty(profile.bio) ? (
+              <span>
+                <em>{firstName} does not have a bio.</em>
+              </span>
+            ) : (
+              <span>{profile.bio}</span>
+            )}
+          </p>
+
+          <div className="profile__skills">
+            <div className="profile__skills--label">
+              My Skills
+              <Icon name="chevrons-right" />
             </div>
+            {profile.skills.map((skill, index) => (
+              <span key={index} className="profile__skills--item">
+                {skill}
+              </span>
+            ))}
           </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }

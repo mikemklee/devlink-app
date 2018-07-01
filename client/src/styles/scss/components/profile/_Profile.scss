@@ -1,0 +1,15 @@
+.profile {
+  margin-top: 1rem;
+  padding: 2rem;
+  align-self: center;
+  flex: 1;
+  min-width: 80rem;
+  display: flex;
+  flex-direction: column;
+
+  &__back {
+    @include squareButton;
+    width: 15rem;
+    font-size: 1.5rem;
+  }
+}

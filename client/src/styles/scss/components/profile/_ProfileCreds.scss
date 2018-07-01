@@ -1,0 +1,14 @@
+.profile__creds {
+  background-color: darken(white, 2%);
+  border-radius: 5px;
+  margin: 2rem 0;
+  padding: 0 2rem;
+}
+
+.experience,
+.education {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+}

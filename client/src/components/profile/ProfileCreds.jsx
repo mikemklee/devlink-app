@@ -6,79 +6,68 @@ class ProfileCreds extends Component {
     const { experience, education } = this.props;
 
     const expItems = experience.map(exp => (
-      <li key={exp._id} className="list-group-item">
-        <h4>{exp.company}</h4>
-        <p>
-          <Moment format="YYYY/MM/DD">{exp.from}</Moment> -
-          {exp.to === null ? (
-            " Now"
-          ) : (
-            <Moment format="YYYY/MM/DD">{exp.to}</Moment>
-          )}
-        </p>
-        <p>
-          <strong>Position:</strong> {exp.title}
-        </p>
-        <p>
-          {exp.location === "" ? null : (
-            <span>
-              <strong>Location: </strong> {exp.location}
-            </span>
-          )}
-        </p>
-        <p>
-          {exp.description === "" ? null : (
-            <span>
-              <strong>Description: </strong> {exp.description}
-            </span>
-          )}
-        </p>
+      <li key={exp._id} className="experience__item">
+        <div className="experience__item__icon">
+          <img src="/img/briefcase.png" alt="experience icon" />
+        </div>
+        <div className="experience__item__detail">
+          <h4 className="experience__item__detail--position">{exp.title}</h4>
+          <p className="experience__item__detail--company">{exp.company}</p>
+          <p className="experience__item__detail--duration">
+            <Moment format="YYYY/MM/DD">{exp.from}</Moment> -{" "}
+            {exp.to === null ? (
+              "Now"
+            ) : (
+              <Moment format="YYYY/MM/DD">{exp.to}</Moment>
+            )}
+          </p>
+          <p className="experience__item__detail--location">
+            {exp.location === "" ? null : <span>{exp.location}</span>}
+          </p>
+          <p className="experience__item__detail--description">
+            {exp.description === "" ? null : <span>{exp.description}</span>}
+          </p>
+        </div>
       </li>
     ));
 
     const eduItems = education.map(edu => (
-      <li key={edu._id} className="list-group-item">
-        <h4>{edu.school}</h4>
-        <p>
-          <Moment format="YYYY/MM/DD">{edu.from}</Moment> -
-          {edu.to === null ? (
-            " Now"
-          ) : (
-            <Moment format="YYYY/MM/DD">{edu.to}</Moment>
-          )}
-        </p>
-        <p>
-          <strong>Degree:</strong> {edu.degree}
-        </p>
-        <p>
-          <strong>Field Of Study:</strong> {edu.fieldofstudy}
-        </p>
-        <p>
-          {edu.description === "" ? null : (
-            <span>
-              <strong>Description: </strong> {edu.description}
-            </span>
-          )}
-        </p>
+      <li key={edu._id} className="education__item">
+        <div className="education__item__icon">
+          <img src="/img/graduationcap.png" alt="education icon" />
+        </div>
+        <div className="education__item__detail">
+          <h4 className="education__item__detail--school">{edu.school}</h4>
+          <p className="education__item__detail--degree">
+            {edu.degree}, {edu.fieldofstudy}
+          </p>
+          <p className="education__item__detail--duration">
+            <Moment format="YYYY">{edu.from}</Moment> -{" "}
+            {edu.to === null ? "Now" : <Moment format="YYYY">{edu.to}</Moment>}
+          </p>
+          <p className="education__item__detail--description">
+            {edu.description === "" ? null : <span>{edu.description}</span>}
+          </p>
+        </div>
       </li>
     ));
     return (
-      <div className="row">
-        <div className="col-md-6">
-          <h3 className="text-center text-info">Experience</h3>
+      <div className="profile__creds">
+        <div className="experience">
+          <h3 className="experience__title">Experience</h3>
           {expItems.length > 0 ? (
-            <ul className="list-group">{expItems}</ul>
+            <ul className="experience__list">{expItems}</ul>
           ) : (
-            <p className="text-center">No Experience Listed</p>
+            <p className="experience--empty">No Experience Listed</p>
           )}
         </div>
 
-        <div className="col-md-6">
-          <h3 className="text-center text-info">Education</h3>
+        <div className="education">
+          <h3 className="education__title">Education</h3>
           {eduItems.length > 0 ? (
-            <ul className="list-group">{eduItems}</ul>
+            <ul className="education__list">{eduItems}</ul>
           ) : (
-            <p className="text-center">No Education Listed</p>
+            <p className="education__empty">No Education Listed</p>
           )}
         </div>
       </div>
