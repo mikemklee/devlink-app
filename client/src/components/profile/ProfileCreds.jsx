@@ -58,7 +58,7 @@ class ProfileCreds extends Component {
           {expItems.length > 0 ? (
             <ul className="experience__list">{expItems}</ul>
           ) : (
-            <p className="experience--empty">No Experience Listed</p>
+            <p className="experience__title">No Experience Listed</p>
           )}
         </div>
 
@@ -67,7 +67,7 @@ class ProfileCreds extends Component {
           {eduItems.length > 0 ? (
             <ul className="education__list">{eduItems}</ul>
           ) : (
-            <p className="education__empty">No Education Listed</p>
+            <p className="education__title">No Education Listed</p>
           )}
         </div>
       </div>

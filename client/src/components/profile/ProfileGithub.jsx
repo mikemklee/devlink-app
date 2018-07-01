@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+
+import GithubRepo from "./GithubRepo";
 
 class ProfileGithub extends Component {
   state = {
     clientId: process.env.REACT_APP_GITHUB_CLIENT_ID,
     clientSecret: process.env.REACT_APP_GITHUB_CLIENT_SECRET,
-    count: 5,
+    count: 6,
     sort: "created: asc",
     repos: []
   };
@@ -30,39 +31,24 @@ class ProfileGithub extends Component {
   render() {
     const { repos } = this.state;
     let repoItems;
-    if (repos.message === "Not Found") {
-      repoItems = <h5>No repositories to display</h5>;
-    } else {
-      repoItems = repos.map(repo => (
-        <div key={repo.id} className="card card-body mb-2">
-          <div className="row">
-            <div className="col-md-6">
-              <h4>
-                <Link to={repo.html_url} className="text-info" target="_blank">
-                  {repo.name}
-                </Link>
-              </h4>
-              <p>{repo.description}</p>
-            </div>
-            <div className="col-md-6">
-              <span className="badge badge-info mr-1">
-                Stars: {repo.stargazers_count}
-              </span>
-              <span className="badge badge-secondary mr-1">
-                Watchers: {repo.watchers_count}
-              </span>
-              <span className="badge badge-success">
-                Forks: {repo.forks_count}
-              </span>
-            </div>
-          </div>
-        </div>
-      ));
-    }
+    if (repos.message === "Not Found") return null;
+    repoItems = (
+      <div className="profile__github__latestrepos">
+        {repos.map(repo => <GithubRepo repo={repo} key={repo.id} />)}
+      </div>
+    );
+
     return (
-      <div ref="myRef">
-        <hr />
-        <h3 className="mb-4">Latest Github Repos</h3>
+      <div className="profile__github" ref="myRef">
+        <h3 className="profile__github__title">
+          Github Contributions in the Last Year
+        </h3>
+        <img
+          className="profile__github__contributions"
+          src={`http://ghchart.rshah.org/${this.props.username}`}
+          alt="leemun1's Github chart"
+        />
+        <h3 className="profile__github__title">Latest Github Repos</h3>
         {repoItems}
       </div>
     );

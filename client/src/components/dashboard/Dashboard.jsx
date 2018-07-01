@@ -37,6 +37,7 @@ class Dashboard extends Component {
             <p className="dashboard__greeting">
               Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
             </p>
+            {/* TODO: add separate button for 'view profile'  */}
             <ProfileActions />
             <Experience experience={profile.experience} />
             <Education education={profile.education} />
