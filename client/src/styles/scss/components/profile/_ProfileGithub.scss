@@ -39,7 +39,8 @@
   }
 
   &__name {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    color: lighten($dark-navy, 10%);
   }
   &__description {
     font-size: 1.4rem;
@@ -50,7 +51,8 @@
     &__item {
       display: flex;
       align-items: flex-start;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
+      margin-right: 2rem;
       svg {
         width: 1.7rem;
         height: 1.7rem;

@@ -2,29 +2,29 @@ import React from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 
-const InputGroup = ({ name, placeholder, value, error, icon, onChange }) => {
+import Icon from "../common/Icon";
+
+const TextIconField = ({ name, placeholder, value, error, icon, onChange }) => {
   return (
-    <div className="input-group mb-3">
-      <div className="input-group-prepend">
-        <span className="input-group-text">
-          <i className={icon} />
-        </span>
+    <div className="icon__field">
+      <div className="icon__field__icon">
+        <Icon name={icon} />
       </div>
       <input
-        className={classnames("form-control form-control-lg", {
-          "is-invalid": error
+        className={classnames("icon__field__input", {
+          "icon__field__input--invalid": error
         })}
         placeholder={placeholder}
         name={name}
         value={value}
         onChange={onChange}
       />
-      {error && <div className="invalid-feedback">{error}</div>}
+      {error && <div className="icon__field__error">{error}</div>}
     </div>
   );
 };
 
-InputGroup.propTypes = {
+TextIconField.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
@@ -34,8 +34,8 @@ InputGroup.propTypes = {
   onChange: PropTypes.func.isRequired
 };
 
-InputGroup.defaultProps = {
+TextIconField.defaultProps = {
   type: "text"
 };
 
-export default InputGroup;
+export default TextIconField;

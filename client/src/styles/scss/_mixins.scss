@@ -5,8 +5,8 @@
   cursor: pointer;
   border-radius: 3px;
   margin: 0 0.5rem;
-  height: 3.5rem;
-  width: 8rem;
+  height: 4rem;
+  width: 9rem;
   font-size: 1.4rem;
   color: white;
   background-color: lighten($dark-navy, 10%);
@@ -42,5 +42,106 @@
   &:hover {
     background-color: $dark-navy;
     color: white;
+  }
+}
+
+@mixin form {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+
+  &__goback {
+    align-self: flex-start;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    background-color: whitesmoke;
+    border-radius: 4px;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: darken(whitesmoke, 2%);
+    }
+  }
+
+  &__title {
+    align-self: flex-start;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    align-self: flex-start;
+    font-size: 1.6rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 30rem;
+  }
+
+  &__togglesocial {
+    @include squareButton;
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+    font-size: 1.5rem;
+    height: 4.5rem;
+    margin: 1rem 0;
+
+    span {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__submit {
+    @include button;
+    margin-top: 2rem;
+  }
+}
+
+@mixin formField {
+  margin: 0.5rem 0;
+  align-self: stretch;
+
+  &__input {
+    outline: none;
+    width: 100%;
+    height: 4rem;
+    border: 1.5px solid $off-white;
+    border-radius: 3px;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s;
+    &--invalid {
+      border-color: red;
+      &::placeholder {
+        color: red;
+      }
+    }
+    &:focus {
+      border-color: darken($off-white, 10%);
+      &::placeholder {
+        color: currentColor;
+      }
+    }
+  }
+
+  &__info,
+  &__error {
+    line-height: 1;
+    padding: 0.2rem 1rem;
+    font-size: 1.3rem;
+  }
+
+  &__error {
+    color: red;
   }
 }

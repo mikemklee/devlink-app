@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
@@ -7,12 +7,12 @@ import { createProfile, getCurrentProfile } from "../../actions/profileActions";
 
 import TextFieldGroup from "../common/TextFieldGroup";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
-import InputGroup from "../common/InputGroup";
+import TextIconField from "../common/TextIconField";
 import SelectListGroup from "../common/SelectListGroup";
 
 import isEmpty from "../../validation/isEmpty";
 
-class CreateProfile extends Component {
+class EditProfile extends Component {
   state = {
     displaySocialInputs: false,
     handle: "",
@@ -114,24 +114,24 @@ class CreateProfile extends Component {
 
     if (displaySocialInputs) {
       socialInputs = (
-        <div>
-          <InputGroup
+        <Fragment>
+          <TextIconField
             placeholder="Twitter Profile URL"
             name="twitter"
-            icon="fab fa-twitter"
+            icon="twitter"
             value={this.state.twitter}
             onChange={this.onChange}
             error={errors.twitter}
           />
-          <InputGroup
+          <TextIconField
             placeholder="LinkedIn Profile URL"
             name="linkedin"
-            icon="fab fa-linkedin"
+            icon="linkedin"
             value={this.state.linkedin}
             onChange={this.onChange}
             error={errors.linkedin}
           />
-        </div>
+        </Fragment>
       );
     }
 
@@ -146,108 +146,95 @@ class CreateProfile extends Component {
     ];
 
     return (
-      <div className="create-profile">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
-              <Link to="/dashboard" className="btn btn-light">
-                Go Back
-              </Link>
-              <h1 className="display-4 text-center">Edit Profile</h1>
-              <small className="d-block pb-3">* = required fields</small>
-              <form onSubmit={this.onSubmit}>
-                <TextFieldGroup
-                  placeholder="* Profile Handle"
-                  name="handle"
-                  value={this.state.handle}
-                  onChange={this.onChange}
-                  error={errors.handle}
-                  info="A unique handle for your profile URL. It could be your full name, company name, nickname, etc."
-                />
-                <SelectListGroup
-                  placeholder="Status"
-                  name="status"
-                  value={this.state.status}
-                  onChange={this.onChange}
-                  error={errors.status}
-                  options={options}
-                  info="What's your current professional status?"
-                />
-                <TextFieldGroup
-                  placeholder="Company"
-                  name="company"
-                  value={this.state.company}
-                  onChange={this.onChange}
-                  error={errors.company}
-                  info="Could be your own or the one you work for"
-                />
-                <TextFieldGroup
-                  placeholder="Website"
-                  name="website"
-                  value={this.state.website}
-                  onChange={this.onChange}
-                  error={errors.website}
-                  info="If you have a website, please provide its URL here"
-                />
-                <TextFieldGroup
-                  placeholder="Location"
-                  name="location"
-                  value={this.state.location}
-                  onChange={this.onChange}
-                  error={errors.location}
-                  info="City or city & state (e.g., Boston, MA)"
-                />
-                <TextFieldGroup
-                  placeholder="Skills"
-                  name="skills"
-                  value={this.state.skills}
-                  onChange={this.onChange}
-                  error={errors.skills}
-                  info="Please provide a list of comma-separated values without spaces (e.g., HTML,CSS,Javascript,Python)"
-                />
-                <TextFieldGroup
-                  placeholder="Github Username"
-                  name="githubusername"
-                  value={this.state.githubusername}
-                  onChange={this.onChange}
-                  error={errors.githubusername}
-                  info="Please provide your Github username here"
-                />
-                <TextAreaFieldGroup
-                  placeholder="Short Bio"
-                  name="bio"
-                  value={this.state.bio}
-                  onChange={this.onChange}
-                  error={errors.bio}
-                  info="Say something about yourself"
-                />
+      <div className="edit-profile">
+        <form className="edit-profile__form" nSubmit={this.onSubmit}>
+          <Link to="/dashboard" className="edit-profile__goback">
+            Go Back
+          </Link>
+          <h1 className="edit-profile__title">Edit Profile</h1>
+          <small className="edit-profile__subtitle">* = required fields</small>
+          <TextFieldGroup
+            placeholder="* Profile Handle"
+            name="handle"
+            value={this.state.handle}
+            onChange={this.onChange}
+            error={errors.handle}
+            info="A unique handle for your profile URL. It could be your full name, company name, nickname, etc."
+          />
+          <SelectListGroup
+            placeholder="Status"
+            name="status"
+            value={this.state.status}
+            onChange={this.onChange}
+            error={errors.status}
+            options={options}
+          />
+          <TextFieldGroup
+            placeholder="Company"
+            name="company"
+            value={this.state.company}
+            onChange={this.onChange}
+            error={errors.company}
+          />
+          <TextFieldGroup
+            placeholder="Website - If you have a website, please provide its URL here"
+            name="website"
+            value={this.state.website}
+            onChange={this.onChange}
+            error={errors.website}
+          />
+          <TextFieldGroup
+            placeholder="Location (e.g., Toronto, Canada)"
+            name="location"
+            value={this.state.location}
+            onChange={this.onChange}
+            error={errors.location}
+          />
+          <TextFieldGroup
+            placeholder="Skills"
+            name="skills"
+            value={this.state.skills}
+            onChange={this.onChange}
+            error={errors.skills}
+            info="Please provide a list of comma-separated values without spaces (e.g., HTML,CSS,Javascript,Python)"
+          />
+          <TextIconField
+            placeholder="Github Username"
+            name="githubusername"
+            icon="github"
+            value={this.state.githubusername}
+            onChange={this.onChange}
+            error={errors.githubusername}
+          />
+          <TextAreaFieldGroup
+            placeholder="Say something about yourself!"
+            name="bio"
+            value={this.state.bio}
+            onChange={this.onChange}
+            error={errors.bio}
+          />
 
-                <div className="mb-3">
-                  <button
-                    type="button"
-                    onClick={this.toggleSocialInputs}
-                    className="btn btn-light"
-                  >
-                    Add Social Network Links
-                  </button>
-                  <span className="text-muted">Optional</span>
-                </div>
-                {socialInputs}
-                <input
-                  type="submit"
-                  value="Submit"
-                  className="btn btn-info btn-block mt-4"
-                />
-              </form>
-            </div>
-          </div>
-        </div>
+          <button
+            type="button"
+            onClick={this.toggleSocialInputs}
+            className="edit-profile__togglesocial"
+          >
+            Add Social Networks
+            <span>(Optional)</span>
+          </button>
+          {socialInputs}
+          <input
+            type="submit"
+            value="Submit"
+            className="edit-profile__submit"
+          />
+        </form>
       </div>
     );
   }
 }
 
-CreateProfile.propTypes = {
+EditProfile.propTypes = {
   profile: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired,
   createProfile: PropTypes.func.isRequired,
@@ -262,4 +249,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { createProfile, getCurrentProfile }
-)(CreateProfile);
+)(EditProfile);

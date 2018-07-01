@@ -8,16 +8,17 @@ const TextFieldGroup = ({
   value,
   error,
   info,
+  icon,
   type,
   onChange,
   disabled
 }) => {
   return (
-    <div className="form__field">
+    <div className="text__field">
       <input
         type={type}
-        className={classnames("form__field__input", {
-          "form__field__input--invalid": error
+        className={classnames("text__field__input", {
+          "text__field__input--invalid": error
         })}
         placeholder={placeholder}
         name={name}
@@ -25,8 +26,8 @@ const TextFieldGroup = ({
         onChange={onChange}
         disabled={disabled}
       />
-      {info && <div className="form__field__info">{info}</div>}
-      {error && <div className="form__field__error">{error}</div>}
+      {info && <div className="text__field__info">{info}</div>}
+      {error && <div className="text__field__error">{error}</div>}
     </div>
   );
 };

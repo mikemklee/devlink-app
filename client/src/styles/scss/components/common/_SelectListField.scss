@@ -1,0 +1,7 @@
+.select__list {
+  @include formField;
+  &__input {
+    font-family: $font-main;
+    letter-spacing: -0.5;
+  }
+}
