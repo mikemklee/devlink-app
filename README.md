@@ -13,7 +13,7 @@ A social network service tailored for developers. Built with the MERN stack, the
 - MongoDB
 - Sass
 
-## Resources:
+## Resources
 
 - [Brad Traversy's course on Udemy](https://www.udemy.com/mern-stack-front-to-back/)
 - [ozh's repo (Github colors for programming languages)](https://github.com/ozh/github-colors)
