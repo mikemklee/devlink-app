@@ -97,7 +97,6 @@ class EditProfile extends Component {
       twitter: this.state.twitter,
       linkedin: this.state.linkedin
     };
-    console.log(profileData);
     this.props.createProfile(profileData, this.props.history);
   };
 
@@ -147,7 +146,7 @@ class EditProfile extends Component {
 
     return (
       <div className="edit-profile">
-        <form className="edit-profile__form" nSubmit={this.onSubmit}>
+        <form className="edit-profile__form" onSubmit={this.onSubmit}>
           <Link to="/dashboard" className="edit-profile__goback">
             Go Back
           </Link>

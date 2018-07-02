@@ -6,7 +6,11 @@ export default () => {
   return (
     <footer>
       <span>Copyright &copy; {new Date().getFullYear()} Devlink</span>
-      <a href="https://github.com/leemun1" target="_blank">
+      <a
+        href="https://github.com/leemun1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Icon name="github" />
       </a>
     </footer>

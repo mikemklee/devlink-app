@@ -552,28 +552,18 @@ footer {
   display: flex;
   flex-direction: column; }
   .profile__back {
-    display: inline-block;
-    border: 3px solid #2c3e50;
-    outline: none;
-    cursor: pointer;
-    margin: 0 0.5rem;
-    height: 4rem;
-    width: 8rem;
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 1;
-    color: #2c3e50;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    align-self: flex-start;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    background-color: whitesmoke;
+    border-radius: 4px;
     transition: all 0.2s;
     width: 15rem;
+    padding: 1rem;
     font-size: 1.5rem; }
     .profile__back:hover {
-      background-color: #2c3e50;
-      color: white; }
+      background-color: #f0f0f0; }
 
 .profile__header {
   display: flex;
@@ -588,7 +578,7 @@ footer {
   align-items: center; }
   .profile__avatar img {
     width: 12rem;
-    border-radius: 50%; }
+    border-radius: 5px; }
 
 .profile__user {
   flex: 1;

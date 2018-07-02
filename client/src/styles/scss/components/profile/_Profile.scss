@@ -8,8 +8,9 @@
   flex-direction: column;
 
   &__back {
-    @include squareButton;
+    @include greyButton;
     width: 15rem;
+    padding: 1rem;
     font-size: 1.5rem;
   }
 }

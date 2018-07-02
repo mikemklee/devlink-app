@@ -9,6 +9,7 @@ class ProfileHeader extends Component {
 
   render() {
     const { profile } = this.props;
+    console.log(profile);
     return (
       <div className="profile__header">
         <div className="profile__avatar">
@@ -27,11 +28,23 @@ class ProfileHeader extends Component {
           )}
         </div>
         <div className="profile__links">
+          {profile.githubusername && (
+            <a
+              className="profile__links__item"
+              href={`https://github.com/${profile.githubusername}`}
+              target="_blank"
+              rel="noopener"
+            >
+              <Icon name="github" />
+              Github
+            </a>
+          )}
           {profile.website && (
             <a
               className="profile__links__item"
               href={profile.website}
               target="_blank"
+              rel="noopener"
             >
               <Icon name="globe" />
               Website
@@ -43,6 +56,7 @@ class ProfileHeader extends Component {
                 className="profile__links__item"
                 href={profile.social.twitter}
                 target="_blank"
+                rel="noopener"
               >
                 <Icon name="twitter" />
                 Twitter
@@ -54,6 +68,7 @@ class ProfileHeader extends Component {
                 className="profile__links__item"
                 href={profile.social.linkedin}
                 target="_blank"
+                rel="noopener"
               >
                 <Icon name="linkedin" />
                 Linkedin
