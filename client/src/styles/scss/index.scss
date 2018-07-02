@@ -6,6 +6,7 @@
 @import "./components/common/SelectListField";
 @import "./components/common/TextIconField";
 @import "./components/common/TextAreaField";
+@import "./components/common/CheckboxField";
 @import "./components/layout/Header";
 @import "./components/layout/Landing";
 @import "./components/layout/Footer";
@@ -26,3 +27,6 @@
 @import "./components/profile/Education";
 @import "./components/create-profile/CreateProfile";
 @import "./components/edit-profile/EditProfile";
+@import "./components/add-credentials/AddExperience";
+@import "./components/add-credentials/AddEducation";
+@import "./components/not-found/NotFound";

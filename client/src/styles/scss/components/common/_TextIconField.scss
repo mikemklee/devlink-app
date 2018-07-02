@@ -1,11 +1,22 @@
 .icon__field {
   @include formField;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+
+  &__input {
+    flex: 1;
+    width: 90%;
+  }
 
   svg {
     width: 2rem;
     height: 2rem;
     margin-right: 1rem;
+  }
+
+  &__label {
+    flex: 0 0 100%;
+    font-size: 1.5rem;
   }
 }

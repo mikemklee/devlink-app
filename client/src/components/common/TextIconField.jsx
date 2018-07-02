@@ -4,9 +4,18 @@ import PropTypes from "prop-types";
 
 import Icon from "../common/Icon";
 
-const TextIconField = ({ name, placeholder, value, error, icon, onChange }) => {
+const TextIconField = ({
+  name,
+  placeholder,
+  label,
+  value,
+  error,
+  icon,
+  onChange
+}) => {
   return (
     <div className="icon__field">
+      {label && <h6 className="icon__field__label">{label}</h6>}
       <div className="icon__field__icon">
         <Icon name={icon} />
       </div>

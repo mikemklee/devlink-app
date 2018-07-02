@@ -2,7 +2,15 @@ import React from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 
-const SelectListGroup = ({ name, value, error, info, onChange, options }) => {
+const SelectListGroup = ({
+  name,
+  value,
+  label,
+  error,
+  info,
+  onChange,
+  options
+}) => {
   const selectOptions = options.map(option => (
     <option key={option.label} value={option.value}>
       {option.label}
@@ -10,6 +18,7 @@ const SelectListGroup = ({ name, value, error, info, onChange, options }) => {
   ));
   return (
     <div className="select__list">
+      {label && <h6 className="select__list__label">{label}</h6>}
       <select
         className={classnames("select__list__input", {
           "select__list__input--invalid": error

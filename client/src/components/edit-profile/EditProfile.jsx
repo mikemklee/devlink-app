@@ -152,9 +152,10 @@ class EditProfile extends Component {
             Go Back
           </Link>
           <h1 className="edit-profile__title">Edit Profile</h1>
-          <small className="edit-profile__subtitle">* = required fields</small>
+          <p className="edit-profile__subtitle">* = required fields</p>
           <TextFieldGroup
-            placeholder="* Profile Handle"
+            label="* Profile Handle"
+            placeholder="(e.g., leemun1, mikelee0813, es6isdabest)"
             name="handle"
             value={this.state.handle}
             onChange={this.onChange}
@@ -162,7 +163,7 @@ class EditProfile extends Component {
             info="A unique handle for your profile URL. It could be your full name, company name, nickname, etc."
           />
           <SelectListGroup
-            placeholder="Status"
+            label="Professional Status"
             name="status"
             value={this.state.status}
             onChange={this.onChange}
@@ -170,36 +171,41 @@ class EditProfile extends Component {
             options={options}
           />
           <TextFieldGroup
-            placeholder="Company"
+            label="Company"
+            placeholder="(e.g., Google)"
             name="company"
             value={this.state.company}
             onChange={this.onChange}
             error={errors.company}
           />
           <TextFieldGroup
-            placeholder="Website - If you have a website, please provide its URL here"
+            label="Website"
+            placeholder="If you have a website, please provide its URL here"
             name="website"
             value={this.state.website}
             onChange={this.onChange}
             error={errors.website}
           />
           <TextFieldGroup
-            placeholder="Location (e.g., Toronto, Canada)"
+            label="Location"
+            placeholder="(e.g., Toronto, Canada)"
             name="location"
             value={this.state.location}
             onChange={this.onChange}
             error={errors.location}
           />
           <TextFieldGroup
-            placeholder="Skills"
+            Label="Skills"
+            placeholder="(e.g., HTML,CSS,Javascript,Python)"
             name="skills"
             value={this.state.skills}
             onChange={this.onChange}
             error={errors.skills}
-            info="Please provide a list of comma-separated values without spaces (e.g., HTML,CSS,Javascript,Python)"
+            info="Please provide a list of comma-separated values without spaces."
           />
           <TextIconField
-            placeholder="Github Username"
+            label="Github Username"
+            placeholder="(e.g., leemun1)"
             name="githubusername"
             icon="github"
             value={this.state.githubusername}

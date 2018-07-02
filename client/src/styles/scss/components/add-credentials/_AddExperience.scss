@@ -1,0 +1,8 @@
+.add-experience {
+  @include form;
+  justify-content: flex-start;
+
+  &__form {
+    min-width: 60rem;
+  }
+}

@@ -35,10 +35,12 @@ class Dashboard extends Component {
         dashboardContent = (
           <Fragment>
             <p className="dashboard__greeting">
-              Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
+              Welcome,{" "}
+              <Link to={`/profile/${profile.handle}`}>{user.name}!</Link>
             </p>
             {/* TODO: add separate button for 'view profile'  */}
             <ProfileActions />
+            {/* TODO: add feature to edit experience and education */}
             <Experience experience={profile.experience} />
             <Education education={profile.education} />
             <button
@@ -53,7 +55,7 @@ class Dashboard extends Component {
         // User logged in but has no profile
         dashboardContent = (
           <Fragment>
-            <p className="dashboard__greeting">Welcome {user.name}</p>
+            <p className="dashboard__greeting">Welcome, {user.name}!</p>
             <p className="dashboard__calltoaction">
               You have not set up your profile yet. <br />
               Please take a moment and complete your profile!

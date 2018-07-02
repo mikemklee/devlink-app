@@ -8,8 +8,10 @@
 
 .profile__avatar {
   margin-right: 2rem;
+  display: flex;
+  align-items: center;
   img {
-    width: 15rem;
+    width: 12rem;
     border-radius: 50%;
   }
 }

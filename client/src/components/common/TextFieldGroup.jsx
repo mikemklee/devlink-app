@@ -8,13 +8,14 @@ const TextFieldGroup = ({
   value,
   error,
   info,
-  icon,
+  label,
   type,
   onChange,
   disabled
 }) => {
   return (
     <div className="text__field">
+      {label && <h6 className="text__field__label">{label}</h6>}
       <input
         type={type}
         className={classnames("text__field__input", {

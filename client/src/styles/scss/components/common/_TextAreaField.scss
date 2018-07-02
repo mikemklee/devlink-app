@@ -1,8 +1,13 @@
-.text__area {
+.textarea {
   @include formField;
 
+  &__label {
+    font-size: 1.5rem;
+  }
+
   &__input {
-    padding: 1rem; //
-    min-height: 10rem; //
+    font-size: 1.8rem;
+    padding: 1rem;
+    min-height: 10rem;
   }
 }

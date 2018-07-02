@@ -1,0 +1,11 @@
+.checkbox__field {
+  margin-bottom: 1rem;
+  align-self: flex-start;
+  &__input {
+    margin-right: 0.5rem;
+  }
+
+  &__label {
+    font-size: 1.4rem;
+  }
+}

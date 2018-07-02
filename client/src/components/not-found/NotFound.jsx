@@ -1,10 +1,14 @@
 import React from "react";
 
-const NotFound = () => {
+const NotFound = ({ history }) => {
   return (
-    <div>
-      <h1 className="display-4">Page Not Found</h1>
-      <p>Sorry, this page does not exist.</p>
+    <div className="not-found">
+      <img className="not-found__image" src="/img/404.png" alt="notfound" />
+      <h1 className="not-found__title">Page Not Found</h1>
+      <p className="not-found__subtitle">Sorry, this page does not exist.</p>
+      <button onClick={() => history.push("/")} className="not-found__goback">
+        Go to Home
+      </button>
     </div>
   );
 };

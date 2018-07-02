@@ -7,21 +7,22 @@ const TextAreaFieldGroup = ({
   placeholder,
   value,
   error,
-  info,
+  label,
   onChange
 }) => {
   return (
-    <div className="text__area">
+    <div className="textarea">
+      {label && <h6 className="textarea__label">{label}</h6>}
       <textarea
-        className={classnames("text__area__input", {
-          "text__area__input--invalid": error
+        className={classnames("textarea__input", {
+          "textarea__input--invalid": error
         })}
         placeholder={placeholder}
         name={name}
         value={value}
         onChange={onChange}
       />
-      {error && <div className="text__area__error">{error}</div>}
+      {error && <div className="textarea__error">{error}</div>}
     </div>
   );
 };
