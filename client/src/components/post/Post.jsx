@@ -23,7 +23,10 @@ class Post extends Component {
       postContent = <Spinner />;
     } else {
       postContent = (
-        <div>
+        <div className="container">
+          <Link to="/feed" className="post__goback">
+            Back To Feed
+          </Link>
           <PostItem post={post} showActions={false} />
           <CommentForm postId={post._id} />
           <CommentFeed postId={post._id} comments={post.comments} />
@@ -31,20 +34,7 @@ class Post extends Component {
       );
     }
 
-    return (
-      <div className="post">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <Link to="/feed" className="btn btn-light mb-3">
-                Back To Feed
-              </Link>
-              {postContent}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+    return <div className="post">{postContent}</div>;
   }
 }
 

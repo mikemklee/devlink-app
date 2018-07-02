@@ -49,27 +49,19 @@ class PostForm extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="post-form mb-3">
-        <div className="card card-info">
-          <div className="card-header bg-info text-white">Say Somthing...</div>
-          <div className="card-body">
-            <form onSubmit={this.onSubmit}>
-              <div className="form-group">
-                <TextAreaFieldGroup
-                  placeholder="Create a post"
-                  name="text"
-                  value={this.state.text}
-                  onChange={this.onChange}
-                  error={errors.text}
-                />
-              </div>
-              <button type="submit" className="btn btn-dark">
-                Submit
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
+      <form className="post__form" onSubmit={this.onSubmit}>
+        <div className="post__form__title">Discussions</div>
+        <TextAreaFieldGroup
+          placeholder="Got a question? Need an advice? Ask your fellow developers for tips and help!"
+          name="text"
+          value={this.state.text}
+          onChange={this.onChange}
+          error={errors.text}
+        />
+        <button type="submit" className="post__form__submit">
+          Submit
+        </button>
+      </form>
     );
   }
 }

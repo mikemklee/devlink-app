@@ -1,0 +1,10 @@
+.post__form {
+  @include form;
+  flex: 0;
+  justify-content: flex-start;
+
+  &__submit {
+    margin-top: 0;
+    align-self: flex-end;
+  }
+}

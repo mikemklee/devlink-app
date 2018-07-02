@@ -6,4 +6,19 @@ footer {
   justify-content: center;
   align-items: center;
   font-size: 1.3rem;
+
+  span {
+    padding-top: 0.2rem;
+  }
+
+  a {
+    height: 70%;
+  }
+
+  svg {
+    width: 2rem;
+    height: 100%;
+    fill: white;
+    margin-left: 1.5rem;
+  }
 }

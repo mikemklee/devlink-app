@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import classnames from "classnames";
 import { Link } from "react-router-dom";
+import moment from "moment";
+
 import { deletePost, addLike, removeLike } from "../../actions/postActions";
+
+import Icon from "../common/Icon";
 
 class PostItem extends Component {
   onDeleteClick = id => () => {
@@ -29,60 +32,49 @@ class PostItem extends Component {
 
   render() {
     const { post, auth, showActions } = this.props;
-
     return (
-      <div className="card card-body mb-3">
-        <div className="row">
-          <div className="col-md-2">
-            <a href="profile.html">
-              <img
-                className="rounded-circle d-none d-md-block"
-                src={post.avatar}
-                alt=""
-              />
-            </a>
-            <br />
-            <p className="text-center">{post.name}</p>
-          </div>
-          <div className="col-md-10">
-            <p className="lead">{post.text}</p>
-            {showActions ? (
-              <span>
-                <button
-                  onClick={this.onLikeClick(post._id)}
-                  type="button"
-                  className="btn btn-light mr-1"
-                >
-                  <i
-                    className={classnames("fas fa-thumbs-up", {
-                      "text-info": this.findUserLike(post.likes)
-                    })}
-                  />
-                  <span className="badge badge-light">{post.likes.length}</span>
-                </button>
-                <button
-                  onClick={this.onUnlikeClick(post._id)}
-                  type="button"
-                  className="btn btn-light mr-1"
-                >
-                  <i className="text-secondary fas fa-thumbs-down" />
-                </button>
-                <Link to={`/post/${post._id}`} className="btn btn-info mr-1">
-                  Comments
-                </Link>
-                {post.user === auth.user.id ? (
-                  <button
-                    onClick={this.onDeleteClick(post._id)}
-                    type="button"
-                    className="btn btn-danger mr-1"
-                  >
-                    <i className="fas fa-times" />
-                  </button>
-                ) : null}
-              </span>
-            ) : null}
-          </div>
+      <div className="feed__item">
+        <Link to={`/profile/${post.user}`} className="feed__item__avatar">
+          <img src={post.avatar} alt="avatar" />
+        </Link>
+        <div className="feed__item__preview">
+          <p className="feed__item__preview--name">{post.name}</p>
+          <p className="feed__item__preview--date">
+            {moment(post.date).fromNow()}
+          </p>
+          <p className="feed__item__preview--text">{post.text}</p>
         </div>
+        {showActions && (
+          <div className="feed__item__actions">
+            <button
+              onClick={this.onLikeClick(post._id)}
+              className="feed__item__actions--like"
+            >
+              <Icon name="chevron-up" />
+              {post.likes.length}
+            </button>
+            <button
+              onClick={this.onUnlikeClick(post._id)}
+              className="feed__item__actions--unlike"
+            >
+              <Icon name="chevron-down" />
+            </button>
+            <Link
+              to={`/post/${post._id}`}
+              className="feed__item__actions--comment"
+            >
+              Comment
+            </Link>
+            {post.user === auth.user.id && (
+              <button
+                onClick={this.onDeleteClick(post._id)}
+                className="feed__item__actions--delete"
+              >
+                <span>&times;</span>
+              </button>
+            )}
+          </div>
+        )}
       </div>
     );
   }

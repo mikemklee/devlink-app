@@ -1,0 +1,108 @@
+.post {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  &__goback {
+    @include greyButton;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.comment__form {
+  @include form;
+  flex: 0;
+  justify-content: flex-start;
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__submit {
+    margin-top: 0;
+    align-self: flex-end;
+  }
+}
+
+.comment__item ~ .comment__item {
+  border-top: 2px solid $off-white;
+}
+
+.comment__item {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-rows: 1fr min-content;
+  padding: 1rem 2rem;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: rgba($off-white, 0.3);
+  }
+
+  &__avatar {
+    grid-row: 1/-1;
+    grid-column: 1/2;
+    padding-top: 1rem;
+    img {
+      width: 6rem;
+      border-radius: 5px;
+    }
+  }
+
+  &__detail {
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content 1fr;
+    grid-column-gap: 1.5rem;
+    &--name {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    &--date {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      font-size: 1.8rem;
+      color: grey;
+    }
+    &--text {
+      grid-column: 1 / -1;
+      grid-row: 2 / -1;
+      font-size: 1.8rem;
+    }
+  }
+
+  &__actions {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 1rem;
+
+    &--delete {
+      @include squareButton;
+      border: 3px solid $red;
+      color: $red;
+      background-color: transparent;
+
+      display: flex;
+      align-items: center;
+
+      height: 3.2rem;
+      width: 3rem;
+      span {
+        padding-top: 0.3rem;
+        font-size: 2.4rem;
+        font-weight: 700;
+      }
+      &:hover {
+        background-color: $red;
+        color: white;
+      }
+    }
+  }
+}

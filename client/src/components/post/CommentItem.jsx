@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import moment from "moment";
+
 import { deleteComment } from "../../actions/postActions";
 
 class CommentItem extends Component {
@@ -10,34 +13,30 @@ class CommentItem extends Component {
 
   render() {
     const { comment, postId, auth } = this.props;
-
     return (
-      <div className="card card-body mb-3">
-        <div className="row">
-          <div className="col-md-2">
-            <a href="profile.html">
-              <img
-                className="rounded-circle d-none d-md-block"
-                src={comment.avatar}
-                alt="avatar"
-              />
-            </a>
-            <br />
-            <p className="text-center">{comment.name}</p>
-          </div>
-          <div className="col-md-10">
-            <p className="lead">{comment.text}</p>
-            {comment.user === auth.user.id ? (
-              <button
-                onClick={this.onDeleteClick(postId, comment._id)}
-                type="button"
-                className="btn btn-danger mr-1"
-              >
-                <i className="fas fa-times" />
-              </button>
-            ) : null}
-          </div>
+      <div className="comment__item">
+        <Link to={`/profile/${comment.user}`} className="comment__item__avatar">
+          <img src={comment.avatar} alt="avatar" />
+        </Link>
+
+        <div className="comment__item__detail">
+          <p className="comment__item__detail--name">{comment.name}</p>
+          <p className="comment__item__detail--date">
+            {moment(comment.date).fromNow()}
+          </p>
+          <p className="comment__item__detail--text">{comment.text}</p>
         </div>
+
+        {comment.user === auth.user.id && (
+          <div className="comment__item__actions">
+            <button
+              onClick={this.onDeleteClick(postId, comment._id)}
+              className="comment__item__actions--delete"
+            >
+              <span>&times;</span>
+            </button>
+          </div>
+        )}
       </div>
     );
   }

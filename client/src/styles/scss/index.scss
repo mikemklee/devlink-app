@@ -7,6 +7,7 @@
 @import "./components/common/TextIconField";
 @import "./components/common/TextAreaField";
 @import "./components/common/CheckboxField";
+@import "./components/common/Container";
 @import "./components/layout/Header";
 @import "./components/layout/Landing";
 @import "./components/layout/Footer";
@@ -30,3 +31,6 @@
 @import "./components/add-credentials/AddExperience";
 @import "./components/add-credentials/AddEducation";
 @import "./components/not-found/NotFound";
+@import "./components/posts/Posts";
+@import "./components/posts/PostForm";
+@import "./components/post/Post";
